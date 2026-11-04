@@ -1,0 +1,311 @@
+date,item,pour_type,drinks_sold,total_price
+2026-10-01,Titos Vodka,free pour,4,32.00
+2026-10-01,Ketel One Vodka,free pour,5,52.50
+2026-10-01,Espolon Tequila,free pour,6,48.00
+2026-10-01,Mijenta Tequila,free pour,2,24.00
+2026-10-01,Tanqueray Gin,free pour,8,64.00
+2026-10-01,Botanist Gin,free pour,1,12.50
+2026-10-01,Bacardi Rum,free pour,8,64.00
+2026-10-01,Planteray Rum,free pour,6,72.00
+2026-10-01,Four Roses Bourbon,free pour,5,40.00
+2026-10-01,Basil Hayden Bourbon,free pour,2,23.00
+2026-10-02,Titos Vodka,free pour,11,88.00
+2026-10-02,Ketel One Vodka,free pour,8,84.00
+2026-10-02,Espolon Tequila,free pour,9,72.00
+2026-10-02,Mijenta Tequila,free pour,14,168.00
+2026-10-02,Tanqueray Gin,free pour,9,72.00
+2026-10-02,Botanist Gin,free pour,11,137.50
+2026-10-02,Bacardi Rum,free pour,16,128.00
+2026-10-02,Planteray Rum,free pour,9,108.00
+2026-10-02,Four Roses Bourbon,free pour,16,128.00
+2026-10-02,Basil Hayden Bourbon,free pour,7,80.50
+2026-10-03,Titos Vodka,free pour,15,120.00
+2026-10-03,Ketel One Vodka,free pour,12,126.00
+2026-10-03,Espolon Tequila,free pour,16,128.00
+2026-10-03,Mijenta Tequila,free pour,7,84.00
+2026-10-03,Tanqueray Gin,free pour,18,144.00
+2026-10-03,Botanist Gin,free pour,14,175.00
+2026-10-03,Bacardi Rum,free pour,15,120.00
+2026-10-03,Planteray Rum,free pour,8,96.00
+2026-10-03,Four Roses Bourbon,free pour,13,104.00
+2026-10-03,Basil Hayden Bourbon,free pour,11,126.50
+2026-10-04,Titos Vodka,free pour,8,64.00
+2026-10-04,Ketel One Vodka,free pour,6,63.00
+2026-10-04,Espolon Tequila,free pour,7,56.00
+2026-10-04,Mijenta Tequila,free pour,2,24.00
+2026-10-04,Tanqueray Gin,free pour,6,48.00
+2026-10-04,Botanist Gin,free pour,3,37.50
+2026-10-04,Bacardi Rum,free pour,5,40.00
+2026-10-04,Planteray Rum,free pour,4,48.00
+2026-10-04,Four Roses Bourbon,free pour,8,64.00
+2026-10-04,Basil Hayden Bourbon,free pour,6,69.00
+2026-10-05,Titos Vodka,free pour,3,24.00
+2026-10-05,Ketel One Vodka,free pour,4,42.00
+2026-10-05,Espolon Tequila,free pour,5,40.00
+2026-10-05,Mijenta Tequila,free pour,2,24.00
+2026-10-05,Tanqueray Gin,free pour,6,48.00
+2026-10-05,Botanist Gin,free pour,4,50.00
+2026-10-05,Bacardi Rum,free pour,5,40.00
+2026-10-05,Planteray Rum,free pour,5,60.00
+2026-10-05,Four Roses Bourbon,free pour,4,32.00
+2026-10-05,Basil Hayden Bourbon,free pour,4,46.00
+2026-10-06,Titos Vodka,free pour,3,24.00
+2026-10-06,Ketel One Vodka,free pour,3,31.50
+2026-10-06,Espolon Tequila,free pour,6,48.00
+2026-10-06,Mijenta Tequila,free pour,4,48.00
+2026-10-06,Tanqueray Gin,free pour,3,24.00
+2026-10-06,Botanist Gin,free pour,3,37.50
+2026-10-06,Bacardi Rum,free pour,9,72.00
+2026-10-06,Planteray Rum,free pour,6,72.00
+2026-10-06,Four Roses Bourbon,free pour,4,32.00
+2026-10-06,Basil Hayden Bourbon,free pour,5,57.50
+2026-10-07,Titos Vodka,free pour,7,56.00
+2026-10-07,Ketel One Vodka,free pour,6,63.00
+2026-10-07,Espolon Tequila,free pour,9,72.00
+2026-10-07,Mijenta Tequila,free pour,2,24.00
+2026-10-07,Tanqueray Gin,free pour,7,56.00
+2026-10-07,Botanist Gin,free pour,1,12.50
+2026-10-07,Bacardi Rum,free pour,10,80.00
+2026-10-07,Planteray Rum,free pour,5,60.00
+2026-10-07,Four Roses Bourbon,free pour,10,80.00
+2026-10-07,Basil Hayden Bourbon,free pour,6,69.00
+2026-10-08,Titos Vodka,free pour,5,40.00
+2026-10-08,Ketel One Vodka,free pour,1,10.50
+2026-10-08,Espolon Tequila,free pour,8,64.00
+2026-10-08,Mijenta Tequila,free pour,4,48.00
+2026-10-08,Tanqueray Gin,free pour,3,24.00
+2026-10-08,Botanist Gin,free pour,4,50.00
+2026-10-08,Bacardi Rum,free pour,7,56.00
+2026-10-08,Planteray Rum,free pour,4,48.00
+2026-10-08,Four Roses Bourbon,free pour,4,32.00
+2026-10-08,Basil Hayden Bourbon,free pour,2,23.00
+2026-10-09,Titos Vodka,free pour,17,136.00
+2026-10-09,Ketel One Vodka,free pour,10,105.00
+2026-10-09,Espolon Tequila,free pour,14,112.00
+2026-10-09,Mijenta Tequila,free pour,10,120.00
+2026-10-09,Tanqueray Gin,free pour,12,96.00
+2026-10-09,Botanist Gin,free pour,6,75.00
+2026-10-09,Bacardi Rum,free pour,12,96.00
+2026-10-09,Planteray Rum,free pour,7,84.00
+2026-10-09,Four Roses Bourbon,free pour,15,120.00
+2026-10-09,Basil Hayden Bourbon,free pour,13,149.50
+2026-10-10,Titos Vodka,free pour,15,120.00
+2026-10-10,Ketel One Vodka,free pour,12,126.00
+2026-10-10,Espolon Tequila,free pour,15,120.00
+2026-10-10,Mijenta Tequila,free pour,10,120.00
+2026-10-10,Tanqueray Gin,free pour,17,136.00
+2026-10-10,Botanist Gin,free pour,13,162.50
+2026-10-10,Bacardi Rum,free pour,12,96.00
+2026-10-10,Planteray Rum,free pour,13,156.00
+2026-10-10,Four Roses Bourbon,free pour,15,120.00
+2026-10-10,Basil Hayden Bourbon,free pour,7,80.50
+2026-10-11,Titos Vodka,free pour,3,24.00
+2026-10-11,Ketel One Vodka,free pour,6,63.00
+2026-10-11,Espolon Tequila,free pour,7,56.00
+2026-10-11,Mijenta Tequila,free pour,5,60.00
+2026-10-11,Tanqueray Gin,free pour,9,72.00
+2026-10-11,Botanist Gin,free pour,6,75.00
+2026-10-11,Bacardi Rum,free pour,3,24.00
+2026-10-11,Planteray Rum,free pour,2,24.00
+2026-10-11,Four Roses Bourbon,free pour,6,48.00
+2026-10-11,Basil Hayden Bourbon,free pour,2,23.00
+2026-10-12,Titos Vodka,free pour,3,24.00
+2026-10-12,Ketel One Vodka,free pour,1,10.50
+2026-10-12,Espolon Tequila,free pour,9,72.00
+2026-10-12,Mijenta Tequila,free pour,6,72.00
+2026-10-12,Tanqueray Gin,free pour,10,80.00
+2026-10-12,Botanist Gin,free pour,3,37.50
+2026-10-12,Bacardi Rum,free pour,6,48.00
+2026-10-12,Planteray Rum,free pour,3,36.00
+2026-10-12,Four Roses Bourbon,free pour,4,32.00
+2026-10-12,Basil Hayden Bourbon,free pour,2,23.00
+2026-10-13,Titos Vodka,free pour,8,64.00
+2026-10-13,Ketel One Vodka,free pour,1,10.50
+2026-10-13,Espolon Tequila,free pour,10,80.00
+2026-10-13,Mijenta Tequila,free pour,6,72.00
+2026-10-13,Tanqueray Gin,free pour,8,64.00
+2026-10-13,Botanist Gin,free pour,4,50.00
+2026-10-13,Bacardi Rum,free pour,4,32.00
+2026-10-13,Planteray Rum,free pour,4,48.00
+2026-10-13,Four Roses Bourbon,free pour,4,32.00
+2026-10-13,Basil Hayden Bourbon,free pour,3,34.50
+2026-10-14,Titos Vodka,free pour,7,56.00
+2026-10-14,Ketel One Vodka,free pour,5,52.50
+2026-10-14,Espolon Tequila,free pour,3,24.00
+2026-10-14,Mijenta Tequila,free pour,4,48.00
+2026-10-14,Tanqueray Gin,free pour,8,64.00
+2026-10-14,Botanist Gin,free pour,1,12.50
+2026-10-14,Bacardi Rum,free pour,8,64.00
+2026-10-14,Planteray Rum,free pour,6,72.00
+2026-10-14,Four Roses Bourbon,free pour,5,40.00
+2026-10-14,Basil Hayden Bourbon,free pour,5,57.50
+2026-10-15,Titos Vodka,free pour,10,80.00
+2026-10-15,Ketel One Vodka,free pour,1,10.50
+2026-10-15,Espolon Tequila,free pour,10,80.00
+2026-10-15,Mijenta Tequila,free pour,3,36.00
+2026-10-15,Tanqueray Gin,free pour,10,80.00
+2026-10-15,Botanist Gin,free pour,3,37.50
+2026-10-15,Bacardi Rum,free pour,5,40.00
+2026-10-15,Planteray Rum,free pour,4,48.00
+2026-10-15,Four Roses Bourbon,free pour,8,64.00
+2026-10-15,Basil Hayden Bourbon,free pour,3,34.50
+2026-10-16,Titos Vodka,jigger,11,88.00
+2026-10-16,Ketel One Vodka,jigger,12,126.00
+2026-10-16,Espolon Tequila,jigger,11,88.00
+2026-10-16,Mijenta Tequila,jigger,8,96.00
+2026-10-16,Tanqueray Gin,jigger,9,72.00
+2026-10-16,Botanist Gin,jigger,6,75.00
+2026-10-16,Bacardi Rum,jigger,9,72.00
+2026-10-16,Planteray Rum,jigger,6,72.00
+2026-10-16,Four Roses Bourbon,jigger,12,96.00
+2026-10-16,Basil Hayden Bourbon,jigger,6,69.00
+2026-10-17,Titos Vodka,jigger,16,128.00
+2026-10-17,Ketel One Vodka,jigger,11,115.50
+2026-10-17,Espolon Tequila,jigger,8,64.00
+2026-10-17,Mijenta Tequila,jigger,10,120.00
+2026-10-17,Tanqueray Gin,jigger,15,120.00
+2026-10-17,Botanist Gin,jigger,13,162.50
+2026-10-17,Bacardi Rum,jigger,10,80.00
+2026-10-17,Planteray Rum,jigger,11,132.00
+2026-10-17,Four Roses Bourbon,jigger,12,96.00
+2026-10-17,Basil Hayden Bourbon,jigger,11,126.50
+2026-10-18,Titos Vodka,jigger,5,40.00
+2026-10-18,Ketel One Vodka,jigger,2,21.00
+2026-10-18,Espolon Tequila,jigger,10,80.00
+2026-10-18,Mijenta Tequila,jigger,6,72.00
+2026-10-18,Tanqueray Gin,jigger,7,56.00
+2026-10-18,Botanist Gin,jigger,6,75.00
+2026-10-18,Bacardi Rum,jigger,5,40.00
+2026-10-18,Planteray Rum,jigger,1,12.00
+2026-10-18,Four Roses Bourbon,jigger,7,56.00
+2026-10-18,Basil Hayden Bourbon,jigger,4,46.00
+2026-10-19,Titos Vodka,jigger,5,40.00
+2026-10-19,Ketel One Vodka,jigger,6,63.00
+2026-10-19,Espolon Tequila,jigger,4,32.00
+2026-10-19,Mijenta Tequila,jigger,5,60.00
+2026-10-19,Tanqueray Gin,jigger,6,48.00
+2026-10-19,Botanist Gin,jigger,5,62.50
+2026-10-19,Bacardi Rum,jigger,10,80.00
+2026-10-19,Planteray Rum,jigger,3,36.00
+2026-10-19,Four Roses Bourbon,jigger,4,32.00
+2026-10-19,Basil Hayden Bourbon,jigger,3,34.50
+2026-10-20,Titos Vodka,jigger,3,24.00
+2026-10-20,Ketel One Vodka,jigger,2,21.00
+2026-10-20,Espolon Tequila,jigger,8,64.00
+2026-10-20,Mijenta Tequila,jigger,1,12.00
+2026-10-20,Tanqueray Gin,jigger,9,72.00
+2026-10-20,Botanist Gin,jigger,6,75.00
+2026-10-20,Bacardi Rum,jigger,6,48.00
+2026-10-20,Planteray Rum,jigger,4,48.00
+2026-10-20,Four Roses Bourbon,jigger,5,40.00
+2026-10-20,Basil Hayden Bourbon,jigger,4,46.00
+2026-10-21,Titos Vodka,jigger,7,56.00
+2026-10-21,Ketel One Vodka,jigger,2,21.00
+2026-10-21,Espolon Tequila,jigger,7,56.00
+2026-10-21,Mijenta Tequila,jigger,1,12.00
+2026-10-21,Tanqueray Gin,jigger,8,64.00
+2026-10-21,Botanist Gin,jigger,6,75.00
+2026-10-21,Bacardi Rum,jigger,10,80.00
+2026-10-21,Planteray Rum,jigger,3,36.00
+2026-10-21,Four Roses Bourbon,jigger,6,48.00
+2026-10-21,Basil Hayden Bourbon,jigger,1,11.50
+2026-10-22,Titos Vodka,jigger,10,80.00
+2026-10-22,Ketel One Vodka,jigger,5,52.50
+2026-10-22,Espolon Tequila,jigger,5,40.00
+2026-10-22,Mijenta Tequila,jigger,6,72.00
+2026-10-22,Tanqueray Gin,jigger,4,32.00
+2026-10-22,Botanist Gin,jigger,2,25.00
+2026-10-22,Bacardi Rum,jigger,3,24.00
+2026-10-22,Planteray Rum,jigger,4,48.00
+2026-10-22,Four Roses Bourbon,jigger,7,56.00
+2026-10-22,Basil Hayden Bourbon,jigger,5,57.50
+2026-10-23,Titos Vodka,jigger,11,88.00
+2026-10-23,Ketel One Vodka,jigger,8,84.00
+2026-10-23,Espolon Tequila,jigger,16,128.00
+2026-10-23,Mijenta Tequila,jigger,10,120.00
+2026-10-23,Tanqueray Gin,jigger,18,144.00
+2026-10-23,Botanist Gin,jigger,9,112.50
+2026-10-23,Bacardi Rum,jigger,8,64.00
+2026-10-23,Planteray Rum,jigger,8,96.00
+2026-10-23,Four Roses Bourbon,jigger,10,80.00
+2026-10-23,Basil Hayden Bourbon,jigger,11,126.50
+2026-10-24,Titos Vodka,jigger,15,120.00
+2026-10-24,Ketel One Vodka,jigger,7,73.50
+2026-10-24,Espolon Tequila,jigger,8,64.00
+2026-10-24,Mijenta Tequila,jigger,9,108.00
+2026-10-24,Tanqueray Gin,jigger,15,120.00
+2026-10-24,Botanist Gin,jigger,14,175.00
+2026-10-24,Bacardi Rum,jigger,8,64.00
+2026-10-24,Planteray Rum,jigger,8,96.00
+2026-10-24,Four Roses Bourbon,jigger,16,128.00
+2026-10-24,Basil Hayden Bourbon,jigger,7,80.50
+2026-10-25,Titos Vodka,jigger,3,24.00
+2026-10-25,Ketel One Vodka,jigger,1,10.50
+2026-10-25,Espolon Tequila,jigger,9,72.00
+2026-10-25,Mijenta Tequila,jigger,3,36.00
+2026-10-25,Tanqueray Gin,jigger,3,24.00
+2026-10-25,Botanist Gin,jigger,2,25.00
+2026-10-25,Bacardi Rum,jigger,4,32.00
+2026-10-25,Planteray Rum,jigger,5,60.00
+2026-10-25,Four Roses Bourbon,jigger,8,64.00
+2026-10-25,Basil Hayden Bourbon,jigger,3,34.50
+2026-10-26,Titos Vodka,jigger,9,72.00
+2026-10-26,Ketel One Vodka,jigger,6,63.00
+2026-10-26,Espolon Tequila,jigger,4,32.00
+2026-10-26,Mijenta Tequila,jigger,1,12.00
+2026-10-26,Tanqueray Gin,jigger,8,64.00
+2026-10-26,Botanist Gin,jigger,6,75.00
+2026-10-26,Bacardi Rum,jigger,10,80.00
+2026-10-26,Planteray Rum,jigger,4,48.00
+2026-10-26,Four Roses Bourbon,jigger,5,40.00
+2026-10-26,Basil Hayden Bourbon,jigger,3,34.50
+2026-10-27,Titos Vodka,jigger,6,48.00
+2026-10-27,Ketel One Vodka,jigger,2,21.00
+2026-10-27,Espolon Tequila,jigger,10,80.00
+2026-10-27,Mijenta Tequila,jigger,2,24.00
+2026-10-27,Tanqueray Gin,jigger,10,80.00
+2026-10-27,Botanist Gin,jigger,1,12.50
+2026-10-27,Bacardi Rum,jigger,8,64.00
+2026-10-27,Planteray Rum,jigger,1,12.00
+2026-10-27,Four Roses Bourbon,jigger,6,48.00
+2026-10-27,Basil Hayden Bourbon,jigger,1,11.50
+2026-10-28,Titos Vodka,jigger,4,32.00
+2026-10-28,Ketel One Vodka,jigger,2,21.00
+2026-10-28,Espolon Tequila,jigger,10,80.00
+2026-10-28,Mijenta Tequila,jigger,2,24.00
+2026-10-28,Tanqueray Gin,jigger,9,72.00
+2026-10-28,Botanist Gin,jigger,3,37.50
+2026-10-28,Bacardi Rum,jigger,5,40.00
+2026-10-28,Planteray Rum,jigger,3,36.00
+2026-10-28,Four Roses Bourbon,jigger,10,80.00
+2026-10-28,Basil Hayden Bourbon,jigger,5,57.50
+2026-10-29,Titos Vodka,jigger,5,40.00
+2026-10-29,Ketel One Vodka,jigger,3,31.50
+2026-10-29,Espolon Tequila,jigger,10,80.00
+2026-10-29,Mijenta Tequila,jigger,4,48.00
+2026-10-29,Tanqueray Gin,jigger,7,56.00
+2026-10-29,Botanist Gin,jigger,1,12.50
+2026-10-29,Bacardi Rum,jigger,6,48.00
+2026-10-29,Planteray Rum,jigger,2,24.00
+2026-10-29,Four Roses Bourbon,jigger,9,72.00
+2026-10-29,Basil Hayden Bourbon,jigger,3,34.50
+2026-10-30,Titos Vodka,jigger,9,72.00
+2026-10-30,Ketel One Vodka,jigger,9,94.50
+2026-10-30,Espolon Tequila,jigger,16,128.00
+2026-10-30,Mijenta Tequila,jigger,13,156.00
+2026-10-30,Tanqueray Gin,jigger,15,120.00
+2026-10-30,Botanist Gin,jigger,9,112.50
+2026-10-30,Bacardi Rum,jigger,9,72.00
+2026-10-30,Planteray Rum,jigger,8,96.00
+2026-10-30,Four Roses Bourbon,jigger,14,112.00
+2026-10-30,Basil Hayden Bourbon,jigger,10,115.00
+2026-10-31,Titos Vodka,jigger,11,88.00
+2026-10-31,Ketel One Vodka,jigger,8,84.00
+2026-10-31,Espolon Tequila,jigger,16,128.00
+2026-10-31,Mijenta Tequila,jigger,7,84.00
+2026-10-31,Tanqueray Gin,jigger,8,64.00
+2026-10-31,Botanist Gin,jigger,10,125.00
+2026-10-31,Bacardi Rum,jigger,17,136.00
+2026-10-31,Planteray Rum,jigger,8,96.00
+2026-10-31,Four Roses Bourbon,jigger,12,96.00
+2026-10-31,Basil Hayden Bourbon,jigger,7,80.50

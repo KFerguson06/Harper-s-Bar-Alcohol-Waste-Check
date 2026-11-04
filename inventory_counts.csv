@@ -1,0 +1,311 @@
+date,item,oz_start,oz_end
+2026-10-01,Titos Vodka,76.08,68.89
+2026-10-01,Ketel One Vodka,76.08,67.13
+2026-10-01,Espolon Tequila,76.08,63.75
+2026-10-01,Mijenta Tequila,76.08,71.90
+2026-10-01,Tanqueray Gin,76.08,62.17
+2026-10-01,Botanist Gin,76.08,74.16
+2026-10-01,Bacardi Rum,76.08,61.73
+2026-10-01,Planteray Rum,76.08,63.50
+2026-10-01,Four Roses Bourbon,76.08,66.22
+2026-10-01,Basil Hayden Bourbon,76.08,71.66
+2026-10-02,Titos Vodka,68.89,45.72
+2026-10-02,Ketel One Vodka,67.13,50.96
+2026-10-02,Espolon Tequila,63.75,45.50
+2026-10-02,Mijenta Tequila,71.90,43.46
+2026-10-02,Tanqueray Gin,62.17,43.29
+2026-10-02,Botanist Gin,74.16,52.42
+2026-10-02,Bacardi Rum,61.73,29.50
+2026-10-02,Planteray Rum,63.50,47.83
+2026-10-02,Four Roses Bourbon,66.22,34.58
+2026-10-02,Basil Hayden Bourbon,71.66,58.47
+2026-10-03,Titos Vodka,45.72,14.12
+2026-10-03,Ketel One Vodka,50.96,26.63
+2026-10-03,Espolon Tequila,45.50,14.06
+2026-10-03,Mijenta Tequila,43.46,29.30
+2026-10-03,Tanqueray Gin,43.29,8.82
+2026-10-03,Botanist Gin,52.42,25.26
+2026-10-03,Bacardi Rum,80.22,50.71
+2026-10-03,Planteray Rum,47.83,31.73
+2026-10-03,Four Roses Bourbon,34.58,7.02
+2026-10-03,Basil Hayden Bourbon,58.47,37.34
+2026-10-04,Titos Vodka,64.84,49.05
+2026-10-04,Ketel One Vodka,26.63,14.27
+2026-10-04,Espolon Tequila,64.78,51.14
+2026-10-04,Mijenta Tequila,29.30,25.14
+2026-10-04,Tanqueray Gin,59.54,48.04
+2026-10-04,Botanist Gin,25.26,19.34
+2026-10-04,Bacardi Rum,50.71,41.08
+2026-10-04,Planteray Rum,31.73,24.50
+2026-10-04,Four Roses Bourbon,57.74,42.20
+2026-10-04,Basil Hayden Bourbon,37.34,25.18
+2026-10-05,Titos Vodka,49.05,42.81
+2026-10-05,Ketel One Vodka,14.27,5.67
+2026-10-05,Espolon Tequila,51.14,41.32
+2026-10-05,Mijenta Tequila,25.14,20.63
+2026-10-05,Tanqueray Gin,48.04,36.24
+2026-10-05,Botanist Gin,19.34,10.69
+2026-10-05,Bacardi Rum,41.08,31.32
+2026-10-05,Planteray Rum,24.50,14.82
+2026-10-05,Four Roses Bourbon,42.20,34.26
+2026-10-05,Basil Hayden Bourbon,25.18,17.44
+2026-10-06,Titos Vodka,42.81,36.11
+2026-10-06,Ketel One Vodka,56.39,50.44
+2026-10-06,Espolon Tequila,41.32,29.31
+2026-10-06,Mijenta Tequila,20.63,11.33
+2026-10-06,Tanqueray Gin,36.24,30.23
+2026-10-06,Botanist Gin,10.69,5.38
+2026-10-06,Bacardi Rum,31.32,12.71
+2026-10-06,Planteray Rum,65.54,54.51
+2026-10-06,Four Roses Bourbon,34.26,25.88
+2026-10-06,Basil Hayden Bourbon,17.44,7.04
+2026-10-07,Titos Vodka,36.11,21.09
+2026-10-07,Ketel One Vodka,50.44,37.27
+2026-10-07,Espolon Tequila,29.31,11.81
+2026-10-07,Mijenta Tequila,11.33,7.35
+2026-10-07,Tanqueray Gin,30.23,15.11
+2026-10-07,Botanist Gin,56.10,54.30
+2026-10-07,Bacardi Rum,63.43,44.21
+2026-10-07,Planteray Rum,54.51,44.86
+2026-10-07,Four Roses Bourbon,25.88,6.02
+2026-10-07,Basil Hayden Bourbon,57.76,46.07
+2026-10-08,Titos Vodka,21.09,11.07
+2026-10-08,Ketel One Vodka,37.27,34.86
+2026-10-08,Espolon Tequila,62.53,47.32
+2026-10-08,Mijenta Tequila,58.07,51.13
+2026-10-08,Tanqueray Gin,15.11,9.21
+2026-10-08,Botanist Gin,54.30,47.42
+2026-10-08,Bacardi Rum,44.21,30.36
+2026-10-08,Planteray Rum,44.86,36.80
+2026-10-08,Four Roses Bourbon,56.74,48.58
+2026-10-08,Basil Hayden Bourbon,46.07,42.32
+2026-10-09,Titos Vodka,61.79,30.33
+2026-10-09,Ketel One Vodka,34.86,14.69
+2026-10-09,Espolon Tequila,47.32,18.94
+2026-10-09,Mijenta Tequila,51.13,31.68
+2026-10-09,Tanqueray Gin,59.93,36.27
+2026-10-09,Botanist Gin,47.42,35.54
+2026-10-09,Bacardi Rum,30.36,6.01
+2026-10-09,Planteray Rum,36.80,22.66
+2026-10-09,Four Roses Bourbon,48.58,17.26
+2026-10-09,Basil Hayden Bourbon,42.32,14.81
+2026-10-10,Titos Vodka,81.05,49.48
+2026-10-10,Ketel One Vodka,65.41,40.91
+2026-10-10,Espolon Tequila,69.66,38.88
+2026-10-10,Mijenta Tequila,31.68,12.52
+2026-10-10,Tanqueray Gin,86.99,54.05
+2026-10-10,Botanist Gin,35.54,9.51
+2026-10-10,Bacardi Rum,56.73,33.01
+2026-10-10,Planteray Rum,73.38,48.70
+2026-10-10,Four Roses Bourbon,67.98,37.29
+2026-10-10,Basil Hayden Bourbon,65.53,50.67
+2026-10-11,Titos Vodka,49.48,43.13
+2026-10-11,Ketel One Vodka,40.91,29.44
+2026-10-11,Espolon Tequila,38.88,24.87
+2026-10-11,Mijenta Tequila,63.24,53.91
+2026-10-11,Tanqueray Gin,54.05,36.19
+2026-10-11,Botanist Gin,60.23,48.92
+2026-10-11,Bacardi Rum,33.01,27.25
+2026-10-11,Planteray Rum,48.70,44.75
+2026-10-11,Four Roses Bourbon,37.29,25.00
+2026-10-11,Basil Hayden Bourbon,50.67,46.18
+2026-10-12,Titos Vodka,43.13,37.39
+2026-10-12,Ketel One Vodka,29.44,27.59
+2026-10-12,Espolon Tequila,24.87,6.84
+2026-10-12,Mijenta Tequila,53.91,42.10
+2026-10-12,Tanqueray Gin,36.19,16.27
+2026-10-12,Botanist Gin,48.92,43.34
+2026-10-12,Bacardi Rum,27.25,14.49
+2026-10-12,Planteray Rum,44.75,39.23
+2026-10-12,Four Roses Bourbon,25.00,17.60
+2026-10-12,Basil Hayden Bourbon,46.18,42.06
+2026-10-13,Titos Vodka,37.39,20.74
+2026-10-13,Ketel One Vodka,27.59,25.40
+2026-10-13,Espolon Tequila,57.56,36.28
+2026-10-13,Mijenta Tequila,42.10,30.39
+2026-10-13,Tanqueray Gin,66.99,51.80
+2026-10-13,Botanist Gin,43.34,35.60
+2026-10-13,Bacardi Rum,14.49,6.48
+2026-10-13,Planteray Rum,39.23,31.47
+2026-10-13,Four Roses Bourbon,17.60,9.88
+2026-10-13,Basil Hayden Bourbon,42.06,36.32
+2026-10-14,Titos Vodka,20.74,6.28
+2026-10-14,Ketel One Vodka,25.40,15.13
+2026-10-14,Espolon Tequila,36.28,30.73
+2026-10-14,Mijenta Tequila,30.39,22.38
+2026-10-14,Tanqueray Gin,51.80,36.15
+2026-10-14,Botanist Gin,35.60,33.63
+2026-10-14,Bacardi Rum,57.20,41.82
+2026-10-14,Planteray Rum,31.47,19.77
+2026-10-14,Four Roses Bourbon,60.60,49.99
+2026-10-14,Basil Hayden Bourbon,36.32,25.56
+2026-10-15,Titos Vodka,57.00,38.83
+2026-10-15,Ketel One Vodka,15.13,13.02
+2026-10-15,Espolon Tequila,30.73,9.66
+2026-10-15,Mijenta Tequila,22.38,15.98
+2026-10-15,Tanqueray Gin,36.15,15.15
+2026-10-15,Botanist Gin,33.63,28.16
+2026-10-15,Bacardi Rum,41.82,32.02
+2026-10-15,Planteray Rum,19.77,12.35
+2026-10-15,Four Roses Bourbon,49.99,32.60
+2026-10-15,Basil Hayden Bourbon,25.56,19.56
+2026-10-16,Titos Vodka,38.83,22.23
+2026-10-16,Ketel One Vodka,63.74,45.78
+2026-10-16,Espolon Tequila,60.38,43.80
+2026-10-16,Mijenta Tequila,66.70,54.82
+2026-10-16,Tanqueray Gin,65.87,52.32
+2026-10-16,Botanist Gin,28.16,19.20
+2026-10-16,Bacardi Rum,32.02,18.44
+2026-10-16,Planteray Rum,63.07,54.06
+2026-10-16,Four Roses Bourbon,32.60,14.54
+2026-10-16,Basil Hayden Bourbon,19.56,10.39
+2026-10-17,Titos Vodka,72.95,48.90
+2026-10-17,Ketel One Vodka,45.78,29.13
+2026-10-17,Espolon Tequila,43.80,31.86
+2026-10-17,Mijenta Tequila,54.82,39.94
+2026-10-17,Tanqueray Gin,52.32,29.79
+2026-10-17,Botanist Gin,69.92,50.51
+2026-10-17,Bacardi Rum,69.16,54.19
+2026-10-17,Planteray Rum,54.06,37.61
+2026-10-17,Four Roses Bourbon,65.26,47.36
+2026-10-17,Basil Hayden Bourbon,61.11,44.87
+2026-10-18,Titos Vodka,48.90,41.63
+2026-10-18,Ketel One Vodka,29.13,26.08
+2026-10-18,Espolon Tequila,31.86,16.86
+2026-10-18,Mijenta Tequila,39.94,30.88
+2026-10-18,Tanqueray Gin,29.79,19.12
+2026-10-18,Botanist Gin,50.51,41.53
+2026-10-18,Bacardi Rum,54.19,46.46
+2026-10-18,Planteray Rum,37.61,36.33
+2026-10-18,Four Roses Bourbon,47.36,37.00
+2026-10-18,Basil Hayden Bourbon,44.87,38.95
+2026-10-19,Titos Vodka,41.63,34.26
+2026-10-19,Ketel One Vodka,26.08,16.97
+2026-10-19,Espolon Tequila,16.86,10.92
+2026-10-19,Mijenta Tequila,30.88,23.32
+2026-10-19,Tanqueray Gin,19.12,10.34
+2026-10-19,Botanist Gin,41.53,34.16
+2026-10-19,Bacardi Rum,46.46,31.68
+2026-10-19,Planteray Rum,36.33,31.76
+2026-10-19,Four Roses Bourbon,37.00,31.06
+2026-10-19,Basil Hayden Bourbon,38.95,34.45
+2026-10-20,Titos Vodka,34.26,29.76
+2026-10-20,Ketel One Vodka,16.97,13.89
+2026-10-20,Espolon Tequila,61.64,49.50
+2026-10-20,Mijenta Tequila,23.32,21.90
+2026-10-20,Tanqueray Gin,61.06,47.46
+2026-10-20,Botanist Gin,34.16,25.30
+2026-10-20,Bacardi Rum,31.68,22.90
+2026-10-20,Planteray Rum,31.76,25.81
+2026-10-20,Four Roses Bourbon,31.06,23.70
+2026-10-20,Basil Hayden Bourbon,34.45,28.50
+2026-10-21,Titos Vodka,29.76,19.22
+2026-10-21,Ketel One Vodka,13.89,10.86
+2026-10-21,Espolon Tequila,49.50,38.83
+2026-10-21,Mijenta Tequila,21.90,20.51
+2026-10-21,Tanqueray Gin,47.46,35.26
+2026-10-21,Botanist Gin,25.30,16.29
+2026-10-21,Bacardi Rum,22.90,8.06
+2026-10-21,Planteray Rum,25.81,21.41
+2026-10-21,Four Roses Bourbon,23.70,14.45
+2026-10-21,Basil Hayden Bourbon,28.50,26.91
+2026-10-22,Titos Vodka,69.94,55.02
+2026-10-22,Ketel One Vodka,61.58,53.88
+2026-10-22,Espolon Tequila,38.83,31.25
+2026-10-22,Mijenta Tequila,20.51,11.24
+2026-10-22,Tanqueray Gin,35.26,29.27
+2026-10-22,Botanist Gin,16.29,13.25
+2026-10-22,Bacardi Rum,58.78,54.41
+2026-10-22,Planteray Rum,21.41,15.48
+2026-10-22,Four Roses Bourbon,65.17,54.57
+2026-10-22,Basil Hayden Bourbon,26.91,19.44
+2026-10-23,Titos Vodka,55.02,38.44
+2026-10-23,Ketel One Vodka,53.88,41.95
+2026-10-23,Espolon Tequila,31.25,7.37
+2026-10-23,Mijenta Tequila,61.96,46.70
+2026-10-23,Tanqueray Gin,79.99,52.68
+2026-10-23,Botanist Gin,63.97,50.27
+2026-10-23,Bacardi Rum,54.41,42.52
+2026-10-23,Planteray Rum,66.20,54.10
+2026-10-23,Four Roses Bourbon,54.57,39.34
+2026-10-23,Basil Hayden Bourbon,70.16,53.69
+2026-10-24,Titos Vodka,38.44,15.94
+2026-10-24,Ketel One Vodka,41.95,31.59
+2026-10-24,Espolon Tequila,58.09,45.95
+2026-10-24,Mijenta Tequila,46.70,33.45
+2026-10-24,Tanqueray Gin,52.68,30.19
+2026-10-24,Botanist Gin,50.27,29.19
+2026-10-24,Bacardi Rum,42.52,30.44
+2026-10-24,Planteray Rum,54.10,41.93
+2026-10-24,Four Roses Bourbon,39.34,15.49
+2026-10-24,Basil Hayden Bourbon,53.69,43.19
+2026-10-25,Titos Vodka,15.94,11.31
+2026-10-25,Ketel One Vodka,31.59,29.90
+2026-10-25,Espolon Tequila,45.95,32.27
+2026-10-25,Mijenta Tequila,33.45,29.16
+2026-10-25,Tanqueray Gin,30.19,25.62
+2026-10-25,Botanist Gin,29.19,26.10
+2026-10-25,Bacardi Rum,30.44,24.48
+2026-10-25,Planteray Rum,41.93,34.39
+2026-10-25,Four Roses Bourbon,66.21,53.97
+2026-10-25,Basil Hayden Bourbon,43.19,38.71
+2026-10-26,Titos Vodka,62.03,48.64
+2026-10-26,Ketel One Vodka,29.90,21.07
+2026-10-26,Espolon Tequila,32.27,26.30
+2026-10-26,Mijenta Tequila,29.16,27.72
+2026-10-26,Tanqueray Gin,25.62,13.57
+2026-10-26,Botanist Gin,26.10,17.19
+2026-10-26,Bacardi Rum,24.48,9.62
+2026-10-26,Planteray Rum,34.39,28.51
+2026-10-26,Four Roses Bourbon,53.97,46.45
+2026-10-26,Basil Hayden Bourbon,38.71,34.24
+2026-10-27,Titos Vodka,48.64,39.85
+2026-10-27,Ketel One Vodka,21.07,18.23
+2026-10-27,Espolon Tequila,26.30,11.14
+2026-10-27,Mijenta Tequila,27.72,24.50
+2026-10-27,Tanqueray Gin,64.29,49.31
+2026-10-27,Botanist Gin,17.19,15.73
+2026-10-27,Bacardi Rum,60.34,48.11
+2026-10-27,Planteray Rum,28.51,27.04
+2026-10-27,Four Roses Bourbon,46.45,37.26
+2026-10-27,Basil Hayden Bourbon,34.24,32.93
+2026-10-28,Titos Vodka,39.85,33.88
+2026-10-28,Ketel One Vodka,18.23,15.08
+2026-10-28,Espolon Tequila,61.86,46.72
+2026-10-28,Mijenta Tequila,24.50,21.51
+2026-10-28,Tanqueray Gin,49.31,35.71
+2026-10-28,Botanist Gin,15.73,11.06
+2026-10-28,Bacardi Rum,48.11,40.86
+2026-10-28,Planteray Rum,27.04,22.45
+2026-10-28,Four Roses Bourbon,37.26,22.45
+2026-10-28,Basil Hayden Bourbon,32.93,25.45
+2026-10-29,Titos Vodka,33.88,26.26
+2026-10-29,Ketel One Vodka,15.08,10.52
+2026-10-29,Espolon Tequila,46.72,31.73
+2026-10-29,Mijenta Tequila,21.51,15.50
+2026-10-29,Tanqueray Gin,35.71,25.35
+2026-10-29,Botanist Gin,11.06,9.60
+2026-10-29,Bacardi Rum,40.86,32.02
+2026-10-29,Planteray Rum,22.45,19.53
+2026-10-29,Four Roses Bourbon,22.45,9.25
+2026-10-29,Basil Hayden Bourbon,25.45,21.06
+2026-10-30,Titos Vodka,26.26,12.81
+2026-10-30,Ketel One Vodka,61.24,47.51
+2026-10-30,Espolon Tequila,31.73,7.56
+2026-10-30,Mijenta Tequila,66.22,46.95
+2026-10-30,Tanqueray Gin,76.07,53.51
+2026-10-30,Botanist Gin,60.32,46.96
+2026-10-30,Bacardi Rum,32.02,18.42
+2026-10-30,Planteray Rum,19.53,7.70
+2026-10-30,Four Roses Bourbon,59.97,39.11
+2026-10-30,Basil Hayden Bourbon,21.06,6.18
+2026-10-31,Titos Vodka,63.53,46.86
+2026-10-31,Ketel One Vodka,47.51,35.73
+2026-10-31,Espolon Tequila,58.28,34.36
+2026-10-31,Mijenta Tequila,46.95,36.52
+2026-10-31,Tanqueray Gin,53.51,41.48
+2026-10-31,Botanist Gin,46.96,32.13
+2026-10-31,Bacardi Rum,69.14,43.92
+2026-10-31,Planteray Rum,58.42,46.39
+2026-10-31,Four Roses Bourbon,39.11,21.04
+2026-10-31,Basil Hayden Bourbon,56.90,46.52
