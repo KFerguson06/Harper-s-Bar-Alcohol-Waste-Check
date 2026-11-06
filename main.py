@@ -41,6 +41,22 @@ def view_inventory():
         print("Ounces on hand:", inventory[item]["oz_on_hand"])
 
 
+# Restocks a bottle that already exists, or adds a new bottle with its details
+def add_or_restock():
+    item = input("Enter the bottle name: ")
+
+    if item in inventory:
+        ounces = get_number("How many ounces are you adding? ")
+        inventory[item]["oz_on_hand"] = inventory[item]["oz_on_hand"] + ounces
+        print(item, "restocked. Ounces on hand:", inventory[item]["oz_on_hand"])
+    else:
+        bottle_cost = get_number("Bottle cost: $")
+        drink_price = get_number("Drink price: $")
+        ounces = get_number("Ounces on hand: ")
+        inventory[item] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
+        print(item, "added to inventory.")
+
+
 running = True
 
 while running:
@@ -50,7 +66,7 @@ while running:
     if choice == "1":
         view_inventory()
     elif choice == "2":
-        print("\nComing soon")
+        add_or_restock()
     elif choice == "3":
         print("\nComing soon")
     elif choice == "4":
