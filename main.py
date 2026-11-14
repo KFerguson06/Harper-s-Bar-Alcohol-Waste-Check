@@ -24,6 +24,19 @@ def save_inventory():
             file.write(item + "," + str(details["bottle_cost"]) + "," +
                        str(details["drink_price"]) + "," + str(details["oz_on_hand"]) + "\n")
 
+# Reads sales.csv into the sales list, one dictionary per sale
+def load_sales():
+    with open("sales.csv", "r") as file:
+        file.readline()
+        for line in file:
+            parts = line.strip().split(",")
+            sale = {"date": parts[0],
+                    "item": parts[1],
+                    "pour_type": parts[2],
+                    "drinks_sold": int(parts[3]),
+                    "total_price": float(parts[4])}
+            sales.append(sale)
+
 # Writes the sales list back to sales.csv
 def save_sales():
     with open("sales.csv", "w") as file:
@@ -50,6 +63,50 @@ def get_number(prompt):
         answer = input(prompt)
     return float(answer)
 
+# Keeps asking until the user types a whole number (like 5), then returns it
+def get_whole_number(prompt):
+    answer = input(prompt)
+    while not answer.isdigit():
+        print("Please enter a whole number, like 5.")
+        answer = input(prompt)
+    return int(answer)
+
+# Records a sale, lowers the ounces on hand, and adds the sale to the sales list
+def record_sale():
+    date = input("Date (YYYY-MM-DD): ")
+    if date == "":
+        print("Date cannot be blank.")
+        return
+
+    item = input("Bottle name: ").strip()
+    if item not in inventory:
+        print(item, "is not in the inventory.")
+        return
+
+    pour_type = input("Pour type (free pour or jigger): ").lower()
+    if pour_type != "free pour" and pour_type != "jigger":
+        print("Pour type must be free pour or jigger.")
+        return
+
+    drinks_sold = get_whole_number("Drinks sold: ")
+    if drinks_sold == 0:
+        print("Drinks sold must be more than 0.")
+        return
+
+    oz_used = drinks_sold * POUR_OZ
+    if oz_used > inventory[item]["oz_on_hand"]:
+        print("Not enough", item, "on hand. Only", inventory[item]["oz_on_hand"], "ounces left.")
+        return
+
+    total_price = round(drinks_sold * inventory[item]["drink_price"], 2)
+    inventory[item]["oz_on_hand"] = round(inventory[item]["oz_on_hand"] - oz_used, 2)
+
+    sale = {"date": date, "item": item, "pour_type": pour_type,
+            "drinks_sold": drinks_sold, "total_price": total_price}
+    sales.append(sale)
+
+    print("Sale recorded:", drinks_sold, item, "drinks for $", total_price)
+    print(item, "ounces on hand:", inventory[item]["oz_on_hand"])
 
 def view_inventory():
     print("\n--- Current Inventory ---")
@@ -75,6 +132,8 @@ def add_or_restock():
         inventory[item] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
         print(item, "added to inventory.")
 
+load_inventory()
+load_sales()
 
 running = True
 
@@ -87,7 +146,7 @@ while running:
     elif choice == "2":
         add_or_restock()
     elif choice == "3":
-        print("\nComing soon")
+        record_sale()
     elif choice == "4":
         print("\nComing soon")
     elif choice == "5":
