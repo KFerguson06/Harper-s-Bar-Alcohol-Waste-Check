@@ -1,17 +1,36 @@
-inventory = {"Titos Vodka": {"bottle_cost": 20.00, "drink_price": 8.00, "oz_on_hand": 46.86}, "Ketel One Vodka": {"bottle_cost": 24.00, "drink_price": 10.50, "oz_on_hand": 35.73}, "Espolon Tequila": {"bottle_cost": 25.00, "drink_price": 8.00, "oz_on_hand": 34.36}}
+POUR_OZ = 1.5   # ounces in one drink
 
-sales = {
-    "2026-10-01": {
-        "Titos Vodka": 32.00,
-        "Ketel One Vodka": 52.50,
-        "Espolon Tequila": 48.00 }}
+inventory = {}
+sales = []
 
-inventory_counts = {
-    "2026-10-01": {
-        "Titos Vodka": 68.89,
-        "Ketel One Vodka": 67.13,
-        "Espolon Tequila": 63.75}}
+# Reads inventory.csv into the inventory dictionary
+def load_inventory():
+    with open("inventory.csv", "r") as file:
+        file.readline()
+        for line in file:
+            parts = line.strip().split(",")
+            item = parts[0]
+            inventory[item] = {"bottle_cost": float(parts[1]),
+                               "drink_price": float(parts[2]),
+                               "oz_on_hand": float(parts[3])}
+            
 
+# Writes the inventory dictionary back to inventory.csv
+def save_inventory():
+    with open("inventory.csv", "w") as file:
+        file.write("item,bottle_cost,drink_price,oz_on_hand\n")
+        for item in inventory:
+            details = inventory[item]
+            file.write(item + "," + str(details["bottle_cost"]) + "," +
+                       str(details["drink_price"]) + "," + str(details["oz_on_hand"]) + "\n")
+
+# Writes the sales list back to sales.csv
+def save_sales():
+    with open("sales.csv", "w") as file:
+        file.write("date,item,pour_type,drinks_sold,total_price\n")
+        for sale in sales:
+            file.write(sale["date"] + "," + sale["item"] + "," + sale["pour_type"] + "," +
+                       str(sale["drinks_sold"]) + "," + str(sale["total_price"]) + "\n")
 
 def show_menu():
     print("\n--- Harper's Bar Menu ---")
@@ -78,7 +97,9 @@ while running:
     elif choice == "7":
         print("\nComing soon")
     elif choice == "8":
-        print("Goodbye!")
+        save_inventory()
+        save_sales()
+        print("Inventory and sales saved. Goodbye!")
         running = False
     else:
         print("Please enter 1, 2, 3, 4, 5, 6, 7, or 8.")
