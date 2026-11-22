@@ -45,6 +45,19 @@ def save_sales():
             file.write(sale["date"] + "," + sale["item"] + "," + sale["pour_type"] + "," +
                        str(sale["drinks_sold"]) + "," + str(sale["total_price"]) + "\n")
 
+# Reads inventory_counts.csv into the counts list, one dictionary per bottle per day
+def load_counts():
+    with open("inventory_counts.csv", "r") as file:
+        file.readline()
+        for line in file:
+            parts = line.strip().split(",")
+            count = {"date": parts[0],
+                     "item": parts[1],
+                     "oz_start": float(parts[2]),
+                     "oz_end": float(parts[3])}
+            counts.append(count)
+
+
 def show_menu():
     print("\n--- Harper's Bar Menu ---")
     print("1. View Inventory")
@@ -89,9 +102,6 @@ def record_sale():
         return
 
     drinks_sold = get_whole_number("Drinks sold: ")
-    if drinks_sold == 0:
-        print("Drinks sold must be more than 0.")
-        return
 
     oz_used = drinks_sold * POUR_OZ
     if oz_used > inventory[item]["oz_on_hand"]:
@@ -132,8 +142,89 @@ def add_or_restock():
         inventory[item] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
         print(item, "added to inventory.")
 
+# Matches each day's inventory count with that day's sales for the same bottle
+# and returns a list with one dictionary per bottle per day
+def build_comparison():
+    comparison = []
+    for count in counts:
+        item = count["item"]
+        drinks_sold = 0
+        revenue = 0
+        pour_type = ""
+        for sale in sales:
+            if sale["date"] == count["date"] and sale["item"] == item:
+                drinks_sold = drinks_sold + sale["drinks_sold"]
+                revenue = revenue + sale["total_price"]
+                pour_type = sale["pour_type"]
+
+        if pour_type != "" and item in inventory:
+            oz_used = round(count["oz_start"] - count["oz_end"], 2)
+            oz_expected = drinks_sold * POUR_OZ
+            cost_per_oz = inventory[item]["bottle_cost"] / BOTTLE_OZ
+            row = {"date": count["date"],
+                   "item": item,
+                   "pour_type": pour_type,
+                   "drinks_sold": drinks_sold,
+                   "oz_expected": oz_expected,
+                   "oz_used": oz_used,
+                   "oz_extra": round(oz_used - oz_expected, 2),
+                   "liquor_cost": round(oz_used * cost_per_oz, 2),
+                   "revenue": round(revenue, 2)}
+            comparison.append(row)
+    return comparison
+
+# Adds up the comparison rows for each group, such as each bottle or each pour type
+def group_totals(comparison, field):
+    groups = {}
+    for row in comparison:
+        key = row[field]
+        if key not in groups:
+            groups[key] = {"drinks_sold": 0, "oz_expected": 0, "oz_used": 0,
+                           "liquor_cost": 0, "revenue": 0}
+        for total in groups[key]: 
+            groups[key][total] = groups[key][total] + row[total]
+    return groups
+
+# Returns pour cost as a percent: what the liquor cost divided by what it sold for
+def pour_cost(liquor_cost, revenue):
+    if revenue == 0:
+        return 0
+    return round(liquor_cost / revenue * 100, 1)
+
+# Returns the average ounces poured in each drink
+def oz_per_drink(oz_used, drinks_sold):
+    if drinks_sold == 0:
+        return 0
+    return round(oz_used / drinks_sold, 2)
+
+# Shows how many ounces each bottle should have used compared to how many it did use
+def inventory_comparison():
+    comparison = build_comparison()
+    if len(comparison) == 0:
+        print("\nNo inventory counts match your sales yet.")
+        return
+
+    by_item = group_totals(comparison, "item")
+    print("\n--- Inventory Comparison ---")
+    for item in by_item:
+        totals = by_item[item]
+        print(item)
+        print("   Drinks sold:     ", totals["drinks_sold"])
+        print("   Ounces expected: ", round(totals["oz_expected"], 2))
+        print("   Ounces used:     ", round(totals["oz_used"], 2))
+        print("   Extra ounces:    ", round(totals["oz_used"] - totals["oz_expected"], 2))
+        print("   Ounces per drink:", oz_per_drink(totals["oz_used"], totals["drinks_sold"]))
+
+    by_pour = group_totals(comparison, "pour_type")
+    print("\nOunces per drink by pour type (should be", POUR_OZ, "):")
+    for pour_type in by_pour:
+        totals = by_pour[pour_type]
+        print("  ", pour_type, oz_per_drink(totals["oz_used"], totals["drinks_sold"]))
+
+
 load_inventory()
 load_sales()
+load_counts()
 
 running = True
 
@@ -148,7 +239,7 @@ while running:
     elif choice == "3":
         record_sale()
     elif choice == "4":
-        print("\nComing soon")
+        inventory_comparison()
     elif choice == "5":
         print("\nComing soon")
     elif choice == "6":
@@ -158,6 +249,7 @@ while running:
     elif choice == "8":
         save_inventory()
         save_sales()
+    
         print("Inventory and sales saved. Goodbye!")
         running = False
     else:
