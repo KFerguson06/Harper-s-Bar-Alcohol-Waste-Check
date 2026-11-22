@@ -60,6 +60,14 @@ def load_counts():
                      "oz_end": float(parts[3])}
             counts.append(count)
 
+# Writes the counts list back to inventory_counts.csv
+def save_counts():
+    with open("inventory_counts.csv", "w") as file:
+        file.write("date,item,oz_start,oz_end\n")
+        for count in counts:
+            file.write(count["date"] + "," + count["item"] + "," +
+                       str(count["oz_start"]) + "," + str(count["oz_end"]) + "\n")
+
 def show_menu():
     print("\n--- Harper's Bar Menu ---")
     print("1. View Inventory")
@@ -98,6 +106,11 @@ def record_sale():
         print(item, "is not in the inventory.")
         return
 
+    for sale in sales:
+        if sale["date"] == date and sale["item"] == item:
+            print(item, "already has a sale recorded on", date)
+            return
+
     pour_type = input("Pour type (free pour or jigger): ").lower()
     if pour_type != "free pour" and pour_type != "jigger":
         print("Pour type must be free pour or jigger.")
@@ -105,19 +118,30 @@ def record_sale():
 
     drinks_sold = get_whole_number("Drinks sold: ")
 
-    oz_used = drinks_sold * POUR_OZ
-    if oz_used > inventory[item]["oz_on_hand"]:
-        print("Not enough", item, "on hand. Only", inventory[item]["oz_on_hand"], "ounces left.")
+    oz_start = inventory[item]["oz_on_hand"]
+    if drinks_sold * POUR_OZ > oz_start:
+        print("Not enough", item, "on hand. Only", oz_start, "ounces left.")
+        return
+
+    print("Ounces at start of day:", oz_start)
+    oz_end = get_number("Ounces left at end of day: ")
+    if oz_end > oz_start:
+        print("Ending ounces cannot be more than", oz_start)
         return
 
     total_price = round(drinks_sold * inventory[item]["drink_price"], 2)
-    inventory[item]["oz_on_hand"] = round(inventory[item]["oz_on_hand"] - oz_used, 2)
+    inventory[item]["oz_on_hand"] = oz_end
 
     sale = {"date": date, "item": item, "pour_type": pour_type,
             "drinks_sold": drinks_sold, "total_price": total_price}
     sales.append(sale)
 
+    count = {"date": date, "item": item, "oz_start": oz_start, "oz_end": oz_end}
+    counts.append(count)
+
     print("Sale recorded:", drinks_sold, item, "drinks for $", total_price)
+    print(item, "ounces used:", round(oz_start - oz_end, 2),
+          "(should be", drinks_sold * POUR_OZ, ")")
     print(item, "ounces on hand:", inventory[item]["oz_on_hand"])
 
 def view_inventory():
@@ -367,7 +391,8 @@ while running:
     elif choice == "8":
         save_inventory()
         save_sales()
-        print("Inventory and sales saved. Goodbye!")
+        save_counts()
+        print("Inventory, sales, and counts saved. Goodbye!")
         running = False
     else:
         print("Please enter 1, 2, 3, 4, 5, 6, 7, or 8.")

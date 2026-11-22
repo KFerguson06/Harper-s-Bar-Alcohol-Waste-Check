@@ -1,7 +1,10 @@
 POUR_OZ = 1.5   # ounces in one drink
+BOTTLE_OZ = 25.36   # ounces in one 750 ml bottle
+FLAG_PERCENT = 10   # flag a day when the liquor used is off by more than 10%
 
 inventory = {}
 sales = []
+counts = []
 
 # Reads inventory.csv into the inventory dictionary
 def load_inventory():
@@ -57,6 +60,14 @@ def load_counts():
                      "oz_end": float(parts[3])}
             counts.append(count)
 
+# Writes the counts list back to inventory_counts.csv
+def save_counts():
+    with open("inventory_counts.csv", "w") as file:
+        file.write("date,item,oz_start,oz_end\n")
+        for count in counts:
+            file.write(count["date"] + "," + count["item"] + "," +
+                       str(count["oz_start"]) + "," + str(count["oz_end"]) + "\n")
+            
 
 def show_menu():
     print("\n--- Harper's Bar Menu ---")
@@ -221,6 +232,52 @@ def inventory_comparison():
         totals = by_pour[pour_type]
         print("  ", pour_type, oz_per_drink(totals["oz_used"], totals["drinks_sold"]))
 
+# Lists each day a bottle used more or less liquor than its sales say it should have
+def flag_differences():
+    comparison = build_comparison()
+    if len(comparison) == 0:
+        print("\nNo inventory counts match your sales yet.")
+        return
+
+    print("\n--- Flagged Days (off by more than", FLAG_PERCENT, "percent) ---")
+    flags = 0
+    extra_cost = 0
+    flags_by_pour = {}
+    for row in comparison:
+        percent_off = 0
+        if row["oz_expected"] > 0:
+            percent_off = row["oz_extra"] / row["oz_expected"] * 100
+        elif row["oz_used"] > 0:
+            percent_off = 100
+
+        if percent_off > FLAG_PERCENT or percent_off < -FLAG_PERCENT:
+            flags = flags + 1
+            cost_per_oz = inventory[row["item"]]["bottle_cost"] / BOTTLE_OZ
+            cost = round(row["oz_extra"] * cost_per_oz, 2)
+            extra_cost = extra_cost + cost
+
+            pour_type = row["pour_type"]
+            if pour_type not in flags_by_pour:
+                flags_by_pour[pour_type] = 0
+            flags_by_pour[pour_type] = flags_by_pour[pour_type] + 1
+
+            if percent_off > 0:
+                problem = "OVER"
+            else:
+                problem = "UNDER"
+            print(row["date"], row["item"], "(" + pour_type + ")", problem, "by",
+                  row["oz_extra"], "oz, cost $", cost)
+
+    if flags == 0:
+        print("No days were flagged. Inventory matches sales.")
+        return
+
+    print("\nDays checked:  ", len(comparison))
+    print("Days flagged:  ", flags)
+    print("Cost of extra liquor: $", round(extra_cost, 2))
+    print("Flags by pour type:")
+    for pour_type in flags_by_pour:
+        print("  ", pour_type, flags_by_pour[pour_type])
 
 load_inventory()
 load_sales()
@@ -249,7 +306,7 @@ while running:
     elif choice == "8":
         save_inventory()
         save_sales()
-    
+        save_counts ()
         print("Inventory and sales saved. Goodbye!")
         running = False
     else:
