@@ -102,9 +102,10 @@ def record_sale():
         print("Date cannot be blank.")
         return
 
-    item = input("Bottle name: ").strip()
-    if item not in inventory:
-        print(item, "is not in the inventory.")
+    name = input("Bottle name: ").strip()
+    item = find_item(name)
+    if item == "":
+        print(name, "is not in the inventory.")
         return
 
     pour_type = input("Pour type (free pour or jigger): ").lower()
@@ -139,19 +140,42 @@ def view_inventory():
 
 
 # Restocks a bottle that already exists, or adds a new bottle with its details
+# Restocks a bottle that already exists, or adds a new bottle with its details
 def add_or_restock():
-    item = input("Enter the bottle name: ")
+    name = input("Enter the bottle name: ").strip()
+    if name == "":
+        print("Bottle name cannot be blank.")
+        return
 
-    if item in inventory:
-        ounces = get_number("How many ounces are you adding? ")
-        inventory[item]["oz_on_hand"] = inventory[item]["oz_on_hand"] + ounces
-        print(item, "restocked. Ounces on hand:", inventory[item]["oz_on_hand"])
+    item = find_item(name)
+    if item != "":
+        print(item, "- bottle cost: $", inventory[item]["bottle_cost"],
+              "drink price: $", inventory[item]["drink_price"])
+        bottles = get_whole_number("How many bottles are you adding? ")
+        if bottles == 0:
+            print("Bottles added must be more than 0.")
+            return
+        ounces = round(bottles * BOTTLE_OZ, 2)
+        cost = round(bottles * inventory[item]["bottle_cost"], 2)
+        inventory[item]["oz_on_hand"] = round(inventory[item]["oz_on_hand"] + ounces, 2)
+        print(item, "restocked with", bottles, "bottles (", ounces, "oz ) for $", cost)
+        print("Ounces on hand:", inventory[item]["oz_on_hand"])
     else:
+        print(name, "is a new bottle.")
         bottle_cost = get_number("Bottle cost: $")
         drink_price = get_number("Drink price: $")
-        ounces = get_number("Ounces on hand: ")
-        inventory[item] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
-        print(item, "added to inventory.")
+        bottles = get_whole_number("How many bottles are you adding? ")
+        ounces = round(bottles * BOTTLE_OZ, 2)
+        inventory[name] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
+        print(name, "added to inventory with", ounces, "ounces.")
+
+# Finds a bottle in the inventory even if the capital letters are different
+# and returns its name, or "" if it is not in the inventory
+def find_item(name):
+    for item in inventory:
+        if item.lower() == name.lower():
+            return item
+    return ""
 
 # Matches each day's inventory count with that day's sales for the same bottle
 # and returns a list with one dictionary per bottle per day
@@ -279,6 +303,76 @@ def flag_differences():
     for pour_type in flags_by_pour:
         print("  ", pour_type, flags_by_pour[pour_type])
 
+# Prints a summary of sales and pour cost, with totals for each bottle
+def pour_cost_report():
+    if len(sales) == 0:
+        print("\nNo sales recorded yet.")
+        return
+
+    total_drinks = 0
+    total_revenue = 0
+    dates = []
+    drinks_by_item = {}
+    for sale in sales:
+        item = sale["item"]
+        total_drinks = total_drinks + sale["drinks_sold"]
+        total_revenue = total_revenue + sale["total_price"]
+        if sale["date"] not in dates:
+            dates.append(sale["date"])
+        if item not in drinks_by_item:
+            drinks_by_item[item] = 0
+        drinks_by_item[item] = drinks_by_item[item] + sale["drinks_sold"]
+
+    best_seller = ""
+    best_drinks = 0
+    for item in drinks_by_item:
+        if drinks_by_item[item] > best_drinks:
+            best_seller = item
+            best_drinks = drinks_by_item[item]
+
+    print("\n--- Pour Cost Report ---")
+    print("Days recorded:       ", len(dates))
+    print("Total drinks sold:   ", total_drinks)
+    print("Total revenue:        $", round(total_revenue, 2))
+    print("Average revenue/day:  $", round(total_revenue / len(dates), 2))
+    print("Best seller:         ", best_seller, "(", best_drinks, "drinks )")
+
+    comparison = build_comparison()
+    if len(comparison) == 0:
+        print("\nNo inventory counts yet, so pour cost cannot be figured.")
+        return
+
+    total_cost = 0
+    total_counted_revenue = 0
+    for row in comparison:
+        total_cost = total_cost + row["liquor_cost"]
+        total_counted_revenue = total_counted_revenue + row["revenue"]
+    print("Total liquor cost:    $", round(total_cost, 2))
+    print("Overall pour cost:   ", pour_cost(total_cost, total_counted_revenue), "%")
+
+    by_item = group_totals(comparison, "item")
+    worst_item = ""
+    worst_cost = 0
+    for item in by_item:
+        item_cost = pour_cost(by_item[item]["liquor_cost"], by_item[item]["revenue"])
+        if item_cost > worst_cost:
+            worst_item = item
+            worst_cost = item_cost
+    print("Highest pour cost:   ", worst_item, "(", worst_cost, "% )")
+
+    by_pour = group_totals(comparison, "pour_type")
+    print("\nPour cost by pour type:")
+    for pour_type in by_pour:
+        totals = by_pour[pour_type]
+        print("  ", pour_type, pour_cost(totals["liquor_cost"], totals["revenue"]), "%")
+
+    print("\nTotals by bottle:")
+    for item in by_item:
+        totals = by_item[item]
+        print("  ", item, "- drinks:", totals["drinks_sold"],
+              "revenue: $", round(totals["revenue"], 2),
+              "pour cost:", pour_cost(totals["liquor_cost"], totals["revenue"]), "%")
+
 load_inventory()
 load_sales()
 load_counts()
@@ -298,7 +392,7 @@ while running:
     elif choice == "4":
         inventory_comparison()
     elif choice == "5":
-        print("\nComing soon")
+        pour_cost_report()
     elif choice == "6":
         print("\nComing soon")
     elif choice == "7":

@@ -101,9 +101,10 @@ def record_sale():
         print("Date cannot be blank.")
         return
 
-    item = input("Bottle name: ").strip()
-    if item not in inventory:
-        print(item, "is not in the inventory.")
+    name = input("Bottle name: ").strip()
+    item = find_item(name)
+    if item == "":
+        print(name, "is not in the inventory.")
         return
 
     for sale in sales:
@@ -155,18 +156,40 @@ def view_inventory():
 
 # Restocks a bottle that already exists, or adds a new bottle with its details
 def add_or_restock():
-    item = input("Enter the bottle name: ")
+    name = input("Enter the bottle name: ").strip()
+    if name == "":
+        print("Bottle name cannot be blank.")
+        return
 
-    if item in inventory:
-        ounces = get_number("How many ounces are you adding? ")
-        inventory[item]["oz_on_hand"] = inventory[item]["oz_on_hand"] + ounces
-        print(item, "restocked. Ounces on hand:", inventory[item]["oz_on_hand"])
+    item = find_item(name)
+    if item != "":
+        print(item, "- bottle cost: $", inventory[item]["bottle_cost"],
+              "drink price: $", inventory[item]["drink_price"])
+        bottles = get_whole_number("How many bottles are you adding? ")
+        if bottles == 0:
+            print("Bottles added must be more than 0.")
+            return
+        ounces = round(bottles * BOTTLE_OZ, 2)
+        cost = round(bottles * inventory[item]["bottle_cost"], 2)
+        inventory[item]["oz_on_hand"] = round(inventory[item]["oz_on_hand"] + ounces, 2)
+        print(item, "restocked with", bottles, "bottles (", ounces, "oz ) for $", cost)
+        print("Ounces on hand:", inventory[item]["oz_on_hand"])
     else:
+        print(name, "is a new bottle.")
         bottle_cost = get_number("Bottle cost: $")
         drink_price = get_number("Drink price: $")
-        ounces = get_number("Ounces on hand: ")
-        inventory[item] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
-        print(item, "added to inventory.")
+        bottles = get_whole_number("How many bottles are you adding? ")
+        ounces = round(bottles * BOTTLE_OZ, 2)
+        inventory[name] = {"bottle_cost": bottle_cost, "drink_price": drink_price, "oz_on_hand": ounces}
+        print(name, "added to inventory with", ounces, "ounces.")
+
+# Finds a bottle in the inventory even if the capital letters are different
+# and returns its name, or "" if it is not in the inventory
+def find_item(name):
+    for item in inventory:
+        if item.lower() == name.lower():
+            return item
+    return ""
 
 # Matches each day's inventory count with that day's sales for the same bottle
 # and returns a list with one dictionary per bottle per day
