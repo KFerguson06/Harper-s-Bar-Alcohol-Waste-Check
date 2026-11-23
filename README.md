@@ -19,9 +19,9 @@ instead of a free pour lower our pour cost?
 1. View Inventory
 2. Add or Restock a Bottle
 3. Record a day's sale
-4. Inventory Comparison (coming soon)
-5. Flag when inventory vs sales are different (coming soon)
-6. Pour cost reports with charts (coming soon)
+4. Inventory Comparison - ounces used vs ounces sold for each bottle
+5. Flag when inventory vs sales are different - lists days off by more than 10%
+6. Pour cost report with charts - prints totals, best seller, and pour cost by bottle and pour type, then shows and saves 2 charts comparing free pour and jigger
 7. Run 30-day simulation (coming soon)
 8. Save and exit
 
@@ -30,6 +30,19 @@ instead of a free pour lower our pour cost?
 - `inventory.csv` - bottle cost, drink price, and ounces on hand for each bottle
 - `sales.csv` - daily drink sales that have been recorded
 - `inventory_counts.csv` - starting and ending ounces counted each day
+- `pour_cost_by_bottle.png` - bar chart of pour cost for each bottle, free pour vs jigger
+- `oz_per_drink_by_day.png` - line chart of the average ounces poured per drink each day
+
+## Charts
+
+![Pour cost by bottle, free pour vs jigger](pour_cost_by_bottle.png)
+
+Every bottle has a lower pour cost with a jigger, so the bar should keep using jiggers for all drinks.
+
+![Average ounces poured per drink by day](oz_per_drink_by_day.png)
+
+Bartenders poured about 2 oz per drink with a free pour, but once jiggers started on Oct 16 every drink stayed close to the 1.5 oz target.
 
 ## Author
 Karin Ferguson
+

@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 POUR_OZ = 1.5   # ounces in one drink
 BOTTLE_OZ = 25.36   # ounces in one 750 ml bottle
 FLAG_PERCENT = 10   # flag a day when the liquor used is off by more than 10%
@@ -373,6 +375,100 @@ def pour_cost_report():
               "revenue: $", round(totals["revenue"], 2),
               "pour cost:", pour_cost(totals["liquor_cost"], totals["revenue"]), "%")
 
+
+# Returns only the comparison rows for one pour type, such as "jigger"
+def filter_pour_type(comparison, pour_type):
+    rows = []
+    for row in comparison:
+        if row["pour_type"] == pour_type:
+            rows.append(row)
+    return rows
+
+# Draws and saves two charts that compare free pour and jigger
+def pour_cost_charts():
+    comparison = build_comparison()
+    if len(comparison) == 0:
+        print("\nNo inventory counts yet, so there is nothing to chart.")
+        return
+    
+    # Bar chart: pour cost for each bottle, free pour next to jigger
+    by_item = group_totals(comparison, "item")
+    free_by_item = group_totals(filter_pour_type(comparison, "free pour"), "item")
+    jigger_by_item = group_totals(filter_pour_type(comparison, "jigger"), "item")
+
+    names = []
+    positions = []
+    free_costs = []
+    jigger_costs = []
+    position = 0
+    for item in by_item:
+        names.append(item)
+        positions.append(position)
+        if item in free_by_item:
+            free_costs.append(pour_cost(free_by_item[item]["liquor_cost"], free_by_item[item]["revenue"]))
+        else:
+            free_costs.append(0)
+        if item in jigger_by_item:
+            jigger_costs.append(pour_cost(jigger_by_item[item]["liquor_cost"], jigger_by_item[item]["revenue"]))
+        else:
+            jigger_costs.append(0)
+        position = position + 1
+
+    free_positions = []
+    jigger_positions = []
+    for position in positions:
+        free_positions.append(position - 0.2)
+        jigger_positions.append(position + 0.2)
+
+    plt.figure(figsize=(10, 6))
+    plt.bar(free_positions, free_costs, width=0.4, label="Free pour")
+    plt.bar(jigger_positions, jigger_costs, width=0.4, label="Jigger")
+    plt.xticks(positions, names, rotation=45)
+    plt.title("Pour Cost by Bottle: Free Pour vs Jigger")
+    plt.xlabel("Bottle")
+    plt.ylabel("Pour cost (%)")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig("pour_cost_by_bottle.png")
+    plt.show()
+
+    # Line chart: average ounces poured per drink each day, one line for each pour type
+    by_date = group_totals(comparison, "date")
+    days = []
+    target = []
+    for date in by_date:
+        days.append(date[5:])
+        target.append(POUR_OZ)
+
+    free_by_date = group_totals(filter_pour_type(comparison, "free pour"), "date")
+    free_days = []
+    free_oz = []
+    for date in free_by_date:
+        free_days.append(date[5:])
+        free_oz.append(oz_per_drink(free_by_date[date]["oz_used"], free_by_date[date]["drinks_sold"]))
+
+    jigger_by_date = group_totals(filter_pour_type(comparison, "jigger"), "date")
+    jigger_days = []
+    jigger_oz = []
+    for date in jigger_by_date:
+        jigger_days.append(date[5:])
+        jigger_oz.append(oz_per_drink(jigger_by_date[date]["oz_used"], jigger_by_date[date]["drinks_sold"]))
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(days, target, linestyle="--", color="gray", label="Target (1.5 oz)")
+    plt.plot(free_days, free_oz, marker="o", label="Free pour")
+    plt.plot(jigger_days, jigger_oz, marker="o", label="Jigger")
+    plt.xticks(rotation=90)
+    plt.title("Average Ounces Poured per Drink by Day")
+    plt.xlabel("Date")
+    plt.ylabel("Ounces per drink")
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig("oz_per_drink_by_day.png")
+    plt.show()
+
+    print("\nCharts saved as pour_cost_by_bottle.png and oz_per_drink_by_day.png")
+
 load_inventory()
 load_sales()
 load_counts()
@@ -392,9 +488,10 @@ while running:
     elif choice == "4":
         inventory_comparison()
     elif choice == "5":
-        pour_cost_report()
+        flag_differences()
     elif choice == "6":
-        print("\nComing soon")
+        pour_cost_report()
+        pour_cost_charts()
     elif choice == "7":
         print("\nComing soon")
     elif choice == "8":
