@@ -12,7 +12,7 @@ instead of a free pour lower our pour cost?
 
 ## How to Run
 1. Open the project folder in VS Code
-2. Run `main.py`
+2. Run `mainpage.py`
 3. Choose an option from the menu
 
 ## Menu Options
@@ -26,12 +26,15 @@ instead of a free pour lower our pour cost?
 8. Save and exit
 
 ## Files
-- `main.py` - runs the menu
+- `mainpage.py` - shows the menu and runs the menu loop. This is the file you run.
+- `bar.py` - data module: loads and saves the CSV files, views inventory, restocks bottles, and records sales
+- `reports_graphs.py` - compares inventory to sales, flags differences, and makes the pour cost report and charts
 - `inventory.csv` - bottle cost, drink price, and ounces on hand for each bottle
 - `sales.csv` - daily drink sales that have been recorded
 - `inventory_counts.csv` - starting and ending ounces counted each day
 - `pour_cost_by_bottle.png` - bar chart of pour cost for each bottle, free pour vs jigger
 - `oz_per_drink_by_day.png` - line chart of the average ounces poured per drink each day
+
 
 ## Charts
 
